@@ -56,5 +56,3 @@ Returns the list of all users.
 | :---: | :---: | :---: | :---: |
 | Description | `OK` | `BAD REQUEST` | `UNAUTHORIZED` |
 
-## Code Quality
-Checked in: https://sonarcloud.io/
