@@ -4,27 +4,55 @@
 >  The challenge is to implement an authentication system (Auth) using a Json Web Token.
 
 ## Background | Problem to solve
+The JOBX team needs to implement an authentication system (Auth) using Json Web Token to continue securely.
 In order to finish the implementation, it is necessary to decrypt a document that contains key information such as the secret libraries used to document and design the component.
 
 
-## Results and analysis
+## Documentation
 
-Exponer y comentar los resultados obtenidos > 50 palabras (mín)
+Annotation based documentation for REST APIs implemented with Spring Web/Rest.
 
-## Solution adopted
+Once the application is running, there is a browser access for
 
-Eplicar porqué se escogido ese algoritmo/algoritmo/métodos adoptados y su solución. (> 30 palabras)
+SWAGGER UI http://localhost:3030/swagger-ui.html
 
-## Installation
+OpenAPI File http://localhost:3030/v3/api-docs
 
-Como utilzar el proyecto y empezar a trabajar con el
+## Use of the application
 
-## Contact info | Not required | Recommended
+There are two controllers:
 
-Incluir algo de info sobre contcto y el autor (si queréis poner background)
+###### AuthController
 
-## License 
+Two methods one to register and one to log users. 
 
-Inlcuir la licéncia y el link a esta 
+Access: http://localhost:3030/auth
+```
+POST("/new") to signup (RequestBody username/email/password/role[by default is user])
 
-[NOMBRE](url)
+POST("/login") to login and generate a token if credentials are correct (RequestBody username/password)
+```
+* User with admin rights
+```
+{
+ username:"jobx_admin"
+ email:"admin@jobx.com",
+ password:"aJOBX90_min25k."
+}
+```
+
+###### UserListController 
+
+Additional endpoint to get a database list of all users that can only be accessed by the previous admin user.
+
+Access: http://localhost:3030/user-list
+```
+Returns the list of all users.
+```
+
+## Status Codes
+
+| Status Code | 200 | 400 | 401 |
+| :---: | :---: | :---: | :---: |
+| Description | `OK` | `BAD REQUEST` | `UNAUTHORIZED` |
+
