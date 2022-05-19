@@ -22,7 +22,7 @@ public class UserListService {
         for (int i = 0; i < usersList.size(); i++) {
 
             for(Role r: usersList.get(i).getRoles()){
-                if (r.getRolename().name().equalsIgnoreCase("admin")){
+                if (r.getRolename().getName().equals("admin")){
                     usersList.remove(i);
                 }
             }
