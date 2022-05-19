@@ -72,6 +72,7 @@ public class AuthController {
             roles.add(roleService.getByRoleName(RoleName.ROLE_ADMIN).get());
         user.setRoles(roles);
         userService.save(user);
+
         return new ResponseEntity(new Mensaje("saved user"), HttpStatus.CREATED);
     }
 
